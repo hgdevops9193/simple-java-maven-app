@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                 withSonarQubeEnv("SonarQube Scanner") {
-                sh "mvn sonar:sonar
+                sh "mvn sonar:sonar \
                     -Dsonar.projectKey=SonarTest \
                     -Dsonar.host.url=http://192.168.0.105:9000 \
                     -Dsonar.login=045f4f92de608ee3c9b3a6b31cf74cf290117fce"
