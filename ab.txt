@@ -1,0 +1,32 @@
+482b5068e363781e68283a234566bb2a7bb3e753
+
+
+045f4f92de608ee3c9b3a6b31cf74cf290117fce
+
+
+mvn sonar:sonar \
+  -Dsonar.projectKey=SonarTest \
+  -Dsonar.host.url=http://192.168.0.105:9000 \
+  -Dsonar.login=045f4f92de608ee3c9b3a6b31cf74cf290117fce
+
+com.mycompany.app:my-app
+
+
+sonar.projectKey=com.mycompany.app:my-app
+sonar.sources=./src
+
+# Required metadata
+sonar.projectKey=SonarTest
+
+# Source information
+sonar.sources=src/main
+sonar.sourceEncoding=UTF-8
+sonar.language=java
+
+# Tests
+sonar.tests=src/test
+sonar.junit.reportsPath=target/surefire-reports
+sonar.surefire.reportsPath=target/surefire-reports
+sonar.jacoco.reportPath=target/jacoco.exec
+sonar.java.binaries=target/classes
+sonar.java.coveragePlugin=jacoco
