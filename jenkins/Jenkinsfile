@@ -9,6 +9,21 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+        stage('Code Quality Check via SonarQube') {
+            steps {
+                script {
+                def scannerHome = tool 'sonarqube';
+                    withSonarQubeEnv("SonarQube Scanner") {
+                    sh "${tool("sonarqube")}/bin/sonar-scanner \
+                    -Dsonar.projectKey=SonarTest \
+                    -Dsonar.sources=. \
+                    -Dsonar.css.node=. \
+                    -Dsonar.host.url=http://192.168.0.105:9000 \
+                    -Dsonar.login=045f4f92de608ee3c9b3a6b31cf74cf290117fce"
+                    }
+                }
+            }
+        }
         stage('Test') {
             steps {
                 sh 'mvn test'
