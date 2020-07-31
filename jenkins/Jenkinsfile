@@ -12,7 +12,7 @@ pipeline {
         stage('Code Quality Check via SonarQube') {
             steps {
                 script {
-                withSonarQubeEnv("SonarQube Scanner") {
+                withSonarQubeEnv("SonarQube") {
                 sh "mvn sonar:sonar \
                     -Dsonar.projectKey=SonarTest \
                     -Dsonar.host.url=http://192.168.0.105:9000 \
