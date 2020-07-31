@@ -14,8 +14,7 @@ pipeline {
                 script {
                 withSonarQubeEnv("SonarQube") {
                 sh "mvn sonar:sonar \
-                    -Dsonar.projectKey=SonarTest \
-                    -Dsonar.host.url=http://192.168.0.105:9000"
+                    -Dsonar.projectKey=SonarTest"
                     }
                 }
             }
