@@ -13,8 +13,7 @@ pipeline {
             steps {
                 script {
                 withSonarQubeEnv("SonarQube") {
-                sh "mvn sonar:sonar \
-                    -Dsonar.projectKey=SonarTest"
+                sh "mvn sonar:sonar"
                     }
                 }
             }
