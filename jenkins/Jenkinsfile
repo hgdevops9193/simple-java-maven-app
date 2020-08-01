@@ -4,6 +4,12 @@ pipeline {
         maven 'jenkins-maven'
     }
     stages {
+        stage('checkout') {
+            steps {
+                echo "cloning scm code"
+                checkout scm
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'

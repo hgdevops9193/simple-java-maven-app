@@ -11,6 +11,8 @@ mvn sonar:sonar \
 
 com.mycompany.app:my-app
 
+-Dsonar.projectKey=SonarTest  -Dsonar.host.url=http://192.168.0.105:9000
+
 
 sonar.projectKey=com.mycompany.app:my-app
 sonar.sources=./src
